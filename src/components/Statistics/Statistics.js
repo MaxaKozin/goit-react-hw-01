@@ -5,12 +5,7 @@ import StatisticItem from './StatisticsItem';
 
 import s from './Statistics.module.css';
 
-const randomBgColor = () => {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return `rgb(${r}, ${g}, ${b})`;
-}
+
 
 const Statistics = ({ title, statistics }) => {
   return (
@@ -19,7 +14,7 @@ const Statistics = ({ title, statistics }) => {
         {title && <h2 className={s.title}>{title}</h2>}
         <ul className={s.statlist}>
           {statistics.map((prop) => (
-            <StatisticItem {...prop} randomBgColor={randomBgColor} />
+            <StatisticItem {...prop} key={prop.id} />
           ))}
         </ul>
       </div>

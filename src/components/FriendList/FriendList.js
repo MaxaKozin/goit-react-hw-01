@@ -8,7 +8,7 @@ import s from './FriendList.module.css';
 const FriendList = ({ friends }) => (
   <ul className={s.friendList}>
     {friends.map(friend => (
-      <FriendItem {...friend} />
+      <FriendItem {...friend} key={friend.id} />
     ))}
   </ul>
 );
@@ -20,13 +20,7 @@ FriendList.defaultProps = {
 }
 
 FriendList.propTypes = {
-  friend: PropTypes.shape({
-    isOnline: PropTypes.bool,
-    id: PropTypes.string.isRequired,
-    avatar: PropTypes.string,
-    name: PropTypes.string.isRequired
-  })
-
+  friends: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default FriendList;

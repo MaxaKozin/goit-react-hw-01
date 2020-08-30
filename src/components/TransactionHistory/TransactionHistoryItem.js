@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TransactionHistoryItem = ({ id, type, amount, currency }) => {
+const TransactionHistoryItem = ({ type, amount, currency }) => {
   return (
-    <tr key={id}>
+    <tr>
       <td>{type}</td>
       <td>{amount}</td>
       <td>{currency}</td>
